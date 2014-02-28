@@ -32,7 +32,7 @@ var app = (function(){
 
   function initFirstPoints (){
     var cont = 0
-      , max = 800
+      , max = 10
       ;
     points = [];
     while(cont<max){
@@ -51,7 +51,7 @@ var app = (function(){
 
   function updatePoints (){
     for (var i = 0; i < points.length; i++) {
-      var c = getCoordsAngleDist(points[i].angle, radius + (Math.sin(Math.random()*50) * 2.4));
+      var c = getCoordsAngleDist(points[i].angle, radius + (Math.sin(Math.random()*50) * 3.4));
       points[i].x = c.x + center.x;
       points[i].y = c.y + center.y;
     }
