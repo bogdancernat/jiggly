@@ -6,9 +6,9 @@ var app = (function(){
     , radius
     , points = []
     , golden = 1.618033988749895
-    // , canvasBg = [196, 196, 196]
-    , canvasBg = (new RColor).get(false, 0.15, 0.90)
-    , color = (new RColor).get(false, 0.75, 0.93)
+    , canvasBg = [255, 255, 255]
+    // , canvasBg = (new RColor).get(false, 0.15, 0.90)
+    , color = (new RColor).get(false, 0.75, 0.95)
     ;
 
   function getRadians (angle){
@@ -34,8 +34,10 @@ var app = (function(){
     var cont = 0
       , max = 10
       ;
+    
     points = [];
-    while(cont<max){
+    
+    while(cont < max){
       var slice = 360/max
         , angle = Math.floor(Math.random()*(slice/3) + slice*cont)
         , c = getCoordsAngleDist(angle, radius)
@@ -44,6 +46,7 @@ var app = (function(){
           y: c.y + center.y,
           angle: angle
         }
+
       points.push(point);
       cont++;
     }
@@ -92,7 +95,7 @@ var app = (function(){
   }
 
   a.canvasResize = function (){
-    canvas.height = window.innerHeight-4;
+    canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     center.x = Math.floor(canvas.width/2);
     center.y = Math.floor(canvas.height/2);
